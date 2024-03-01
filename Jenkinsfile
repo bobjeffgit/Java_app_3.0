@@ -72,8 +72,8 @@ pipeline{
                    mvnBuild()
                }
             }
-        }
-        stage('Push to Jfrog Artifactory')
+       }
+        stage('Push to Jfrog Artifactory') {
          when { expression {  params.action == 'create' } }
             steps{
                script{
@@ -129,3 +129,4 @@ pipeline{
             }
         }      
     }
+  }
